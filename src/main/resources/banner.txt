@@ -1,0 +1,15 @@
+source from http://patorjk.com/software/taag
+
+ (`-').-> (`-')  _         _  (`-') (`-')  _   (`-')
+ (OO )__  ( OO).-/  <-.    \-.(OO ) ( OO).-/<-.(OO )
+,--. ,'-'(,------.,--. )   _.'    \(,------.,------,)
+|  | |  | |  .---'|  (`-')(_...--'' |  .---'|   /`. '
+|  `-'  |(|  '--. |  |OO )|  |_.' |(|  '--. |  |_.' |
+|  .-.  | |  .--'(|  '__ ||  .___.' |  .--' |  .   .'
+|  | |  | |  `---.|     |'|  |      |  `---.|  |\  \
+`--' `--' `------'`-----' `--'      `------'`--' '--'
+
+${spring-boot.version}
+${spring-boot.formatted-version}
+${application.version}
+http://localhost:${server.port}${server.servlet.context-path}

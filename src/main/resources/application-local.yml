@@ -1,0 +1,41 @@
+
+server:
+  port: 8080
+  #tomcat access log setting
+  tomcat:
+    basedir: ./
+    accesslog:
+      enabled: true
+      file-date-format:
+      max-days: 30
+      pattern: '%h %l %u [%t{yyyy-MM-dd&apos;T&apos;HH:mm:ss.SSSZ}] "%r" %s %b %D "%i{Referer}" "%i{User-Agent}"'
+      prefix: etoos-api-access
+      rotate: true
+      suffix: .log
+
+logging:
+  file:
+    path: logs/
+    name:  ${logging.file.path}etoos-api.log
+  pattern:
+    file: '%d{ISO8601} %-5p %-22t-[%-50c{2}][%-25M:%4L][%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-Span-Export}] %m%n'
+    rolling-file-name: ${LOG_FILE}.%d{yyyyMMdd}.%i
+
+spring:
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://15.165.211.7:3306/awesome_mall?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
+      username: dev_user
+      password: dhlqnrhddyd
+
+      connection-timeout: 20000
+      minimum-idle: 5
+      maximum-pool-size: 12
+      max-lifetime: 1200000
+      auto-commit: true
+
+
+
+
+

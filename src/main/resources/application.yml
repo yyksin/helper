@@ -1,0 +1,30 @@
+##기본 설정값 참고
+#https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#common-application-properties
+server:
+  shutdown: graceful
+  port: 8080
+  servlet:
+    context-path: /
+
+logging:
+  file:
+    max-size: 10MB
+  pattern:
+    console: "%d{ISO8601} %-5p %-22t-[%-50c{2}][%-25M:%4L][%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-Span-Export}] %m%n"
+  level:
+    root: info
+    com:
+      api:
+        etoos:
+          repository: trace
+
+
+#graceful shutdown 설정
+#요청스레드 완료하게 안전하게 톰캣을 종료한다.
+#사용하여 활성화하면 웹 서버는 더 이상 새 요청을 허용하지 않으며 활성 요청이 완료될 때까지 유예 기간을 기다린다.
+#에버노트 graceful shutdown 참고
+spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 7s
+
+
